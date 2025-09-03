@@ -8,7 +8,7 @@ try {
         $password = isset($_POST['password']) ? $_POST['password'] : null;
 
         if($email && $password) {
-            $sql = "SELECT id, email, password FROM users WHERE email = ?>";
+            $sql = "SELECT id, email, password FROM users WHERE email = ?";
             $stmt = $conn->prepare($sql);
 
             if($stmt){
