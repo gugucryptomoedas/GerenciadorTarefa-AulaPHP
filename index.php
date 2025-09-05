@@ -37,13 +37,14 @@ if(!isset($_SESSION['user_id'])) {
         </nav>
         <?php if (isset($_SESSION['message_type'])): ?>
             <div class="alert alert-<?= $_SESSION['message_type']; ?> alert-dissmible fade show" role="alert">
-                <?= $_SESSION['message']; ?>
+                <?= $_SESSION ['message']; ?> 
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?php unset($_SESSION['message']); ?>
-            <?php endif; ?>
+            <?php unset($_SESSION['message']); 
+                unset($_SESSION['message_type']);
+            endif ?>
         <main class="container p-4">
             <div class="row">
                 <div class="col-md-4">
