@@ -18,15 +18,15 @@ session_start();
 
 <body>
     <div class="container">
-    <?php if (isset($_SESSION['message_type'])): ?>
+        <?php if (isset($_SESSION['message_type'])): ?>
             <div class="alert alert-<?= $_SESSION['message_type']; ?> alert-dissmible fade show" role="alert">
                 <?= $_SESSION['message']; ?>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?php unset($_SESSION['message']); 
-            endif; ?>
+        <?php unset($_SESSION['message']);
+        endif; ?>
         <div class="row justify-content-center">
             <div class="col-md-4">
                 <div class="card card-body mt-5">
@@ -59,13 +59,13 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
-        <script>
-    setTimeout(() => {
-        const alert = document.querySelector('.alert');
-        if (alert) {
-            alert.style.display = 'none';
-        }
-    }, 1500);
+    <script>
+        setTimeout(() => {
+            const alert = document.querySelector('.alert');
+            if (alert) {
+                alert.style.display = 'none';
+            }
+        }, 1500);
     </script>
 </body>
 

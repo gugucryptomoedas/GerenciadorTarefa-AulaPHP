@@ -14,18 +14,15 @@ try {
             if ($stmt) {
                 $stmt->bind_param("ss", $title, $description);
 
-
                 if ($stmt->execute()) {
-                    if ($stmt->execute()) {
-                        session_start();
-                        $_SESSION['message'] = "Tarefa salva com sucesso!";
-                        $_SESSION['message_type'] = "success";
-                        header("Location:index.php");
-                        exit();
-                    }
+                    session_start();
+                    $_SESSION['message'] = "Tarefa salva com sucesso!";
+                    $_SESSION['message_type'] = "success";
+                    header("Location: index.php");
+                    exit();
                 } else {
-                    session_start().
-                    $_SESSION['message'] = "Erro ao salvar a tarefa.";
+                    session_start() .
+                        $_SESSION['message'] = "Erro ao salvar a tarefa.";
                     $_SESSION['message_type'] = "danger";
                     throw new Exception("Erro ao executar a consulta: " . $stmt->error);
                 }

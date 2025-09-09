@@ -19,5 +19,5 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     )";
 
 if ($conn->query($sql) === FALSE) {
-    echo "Erro ao criar tabela:" . $conn->error; 
+    echo "Erro ao criar tabela:" . $conn->error;
 }
